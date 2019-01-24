@@ -37,7 +37,7 @@ namespace MyBeerApp.Web
             var dbContext = DatabaseContextFactory.ProductionContext();
             services.AddScoped<IDatabaseContext>(x => DatabaseContextFactory.ProductionContext());
             services.AddScoped<IRepository<Beer>, EfRepository<Beer>>();
-            services.AddMediatR(cfg => cfg.AsSingleton(), typeof(BeersHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(cfg => cfg.AsTransient(), typeof(BeersHandler).GetTypeInfo().Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

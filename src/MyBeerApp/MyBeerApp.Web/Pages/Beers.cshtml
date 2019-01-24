@@ -1,0 +1,14 @@
+﻿@page
+@model MyBeerApp.Web.Pages.BeersModel
+@{
+    ViewData["Title"] = "My Beers";
+}
+
+<h1>Beers</h1>
+
+<ul>
+    @foreach (var beer in Model.Beers)
+    {
+        <li>@beer.Name</li>
+    }
+</ul>
