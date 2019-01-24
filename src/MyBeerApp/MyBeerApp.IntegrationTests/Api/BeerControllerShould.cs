@@ -16,7 +16,7 @@ namespace MyBeerApp.IntegrationTests.Api
         {
             var response = await _fixture.Api.GetAllBeers();
             response.Should().NotBeNullOrEmpty();
-            response.Should().HaveCount(5);
+            response.Should().HaveCount(2);
         }
     }
 }

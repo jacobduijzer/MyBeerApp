@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyBeerApp.Api\MyBeerApp.Api.csproj" />
+    <ProjectReference Include="..\MyBeerApp.Mocks\MyBeerApp.Mocks.csproj" />
     <ProjectReference Include="..\MyBeerApp.Web\MyBeerApp.Web.csproj" />
   </ItemGroup>
 
