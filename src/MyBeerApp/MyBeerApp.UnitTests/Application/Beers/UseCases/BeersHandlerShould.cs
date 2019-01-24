@@ -16,7 +16,6 @@ namespace MyBeerApp.UnitTests.Application.Beers.UseCases
         [Fact]
         public void Construct()
         {
-            // Run the test against one instance of the context
             using (var context = new MyBeerAppContext(_fixture.dbContextOptions))
             {
                 var beerRepository = new EfRepository<Beer>(context);

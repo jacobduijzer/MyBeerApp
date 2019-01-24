@@ -9,9 +9,9 @@ namespace MyBeerApp.Infrastructure.Shared
     public class EfRepository<TEntity> : IRepository<TEntity>
          where TEntity : BaseEntity
     {
-        private readonly IDatabaseContext _dbContext;
+        private readonly MyBeerAppContext _dbContext;
 
-        public EfRepository(IDatabaseContext myBeerAppContext) =>
+        public EfRepository(MyBeerAppContext myBeerAppContext) =>
             _dbContext = myBeerAppContext;
 
         public async Task<List<TEntity>> GetItemsAsync(ISpecification<TEntity> specification) =>

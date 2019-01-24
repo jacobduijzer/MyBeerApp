@@ -34,8 +34,7 @@ namespace MyBeerApp.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var dbContext = DatabaseContextFactory.ProductionContext();
-            services.AddScoped<IDatabaseContext>(x => DatabaseContextFactory.ProductionContext());
+            services.AddScoped<MyBeerAppContext>(x => new MyBeerAppContextFactory().CreateDbContext(null));
             services.AddScoped<IRepository<Beer>, EfRepository<Beer>>();
             services.AddMediatR(cfg => cfg.AsTransient(), typeof(BeersHandler).GetTypeInfo().Assembly);
         }
