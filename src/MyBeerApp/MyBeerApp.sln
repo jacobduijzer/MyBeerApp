@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Application", "My
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Infrastructure", "MyBeerApp.Infrastructure\MyBeerApp.Infrastructure.csproj", "{434248C4-2621-4295-ADF3-BCE9EF0BA35B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.UnitTests", "MyBeerApp.UnitTests\MyBeerApp.UnitTests.csproj", "{F08F7336-48A6-47BB-AB06-497BE13C6F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.IntegrationTests", "MyBeerApp.IntegrationTests\MyBeerApp.IntegrationTests.csproj", "{5F53B201-EABA-47FB-8960-511F54378AD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{434248C4-2621-4295-ADF3-BCE9EF0BA35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{434248C4-2621-4295-ADF3-BCE9EF0BA35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{434248C4-2621-4295-ADF3-BCE9EF0BA35B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08F7336-48A6-47BB-AB06-497BE13C6F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08F7336-48A6-47BB-AB06-497BE13C6F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08F7336-48A6-47BB-AB06-497BE13C6F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08F7336-48A6-47BB-AB06-497BE13C6F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F53B201-EABA-47FB-8960-511F54378AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F53B201-EABA-47FB-8960-511F54378AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F53B201-EABA-47FB-8960-511F54378AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F53B201-EABA-47FB-8960-511F54378AD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
