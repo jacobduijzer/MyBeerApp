@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using MyBeerApp.Application.Beers.UseCases;
+using MyBeerApp.Domain.Beers;
+using MyBeerApp.Domain.Shared;
+using MyBeerApp.Infrastructure.Shared;
+using System.Reflection;
 
 namespace MyBeerApp.Api
 {
@@ -26,6 +25,11 @@ namespace MyBeerApp.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            var dbContext = DatabaseContextFactory.ProductionContext();
+            services.AddScoped<IDatabaseContext>(x => DatabaseContextFactory.ProductionContext());
+            services.AddScoped<IRepository<Beer>, EfRepository<Beer>>();
+            services.AddMediatR(cfg => cfg.AsTransient(), typeof(BeersHandler).GetTypeInfo().Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
