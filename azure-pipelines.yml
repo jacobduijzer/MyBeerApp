@@ -10,5 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
+- script: ls
+
 - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t mybeerapp:dev .
   displayName: 'docker build'
