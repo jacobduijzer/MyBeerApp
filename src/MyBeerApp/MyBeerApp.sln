@@ -1,23 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28516.95
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Api", "MyBeerApp.Api\MyBeerApp.Api.csproj", "{D33E793A-4FB8-4417-BA6D-29B2A0CA0F54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.Api", "MyBeerApp.Api\MyBeerApp.Api.csproj", "{D33E793A-4FB8-4417-BA6D-29B2A0CA0F54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Web", "MyBeerApp.Web\MyBeerApp.Web.csproj", "{FB8F7E43-5B69-4045-921E-5DCF861257E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.Web", "MyBeerApp.Web\MyBeerApp.Web.csproj", "{FB8F7E43-5B69-4045-921E-5DCF861257E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Domain", "MyBeerApp.Domain\MyBeerApp.Domain.csproj", "{A90195C1-79B3-4B9B-A5D7-B737CEC40AA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.Domain", "MyBeerApp.Domain\MyBeerApp.Domain.csproj", "{A90195C1-79B3-4B9B-A5D7-B737CEC40AA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Application", "MyBeerApp.Application\MyBeerApp.Application.csproj", "{3C7F0B22-4881-4F38-B0D4-BAC182F933BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.Application", "MyBeerApp.Application\MyBeerApp.Application.csproj", "{3C7F0B22-4881-4F38-B0D4-BAC182F933BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Infrastructure", "MyBeerApp.Infrastructure\MyBeerApp.Infrastructure.csproj", "{434248C4-2621-4295-ADF3-BCE9EF0BA35B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.Infrastructure", "MyBeerApp.Infrastructure\MyBeerApp.Infrastructure.csproj", "{434248C4-2621-4295-ADF3-BCE9EF0BA35B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.UnitTests", "MyBeerApp.UnitTests\MyBeerApp.UnitTests.csproj", "{F08F7336-48A6-47BB-AB06-497BE13C6F51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.UnitTests", "MyBeerApp.UnitTests\MyBeerApp.UnitTests.csproj", "{F08F7336-48A6-47BB-AB06-497BE13C6F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.IntegrationTests", "MyBeerApp.IntegrationTests\MyBeerApp.IntegrationTests.csproj", "{5F53B201-EABA-47FB-8960-511F54378AD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.IntegrationTests", "MyBeerApp.IntegrationTests\MyBeerApp.IntegrationTests.csproj", "{5F53B201-EABA-47FB-8960-511F54378AD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Mocks", "MyBeerApp.Mocks\MyBeerApp.Mocks.csproj", "{6F5248FA-53FF-493A-8731-34FC495B8675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBeerApp.Mocks", "MyBeerApp.Mocks\MyBeerApp.Mocks.csproj", "{6F5248FA-53FF-493A-8731-34FC495B8675}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

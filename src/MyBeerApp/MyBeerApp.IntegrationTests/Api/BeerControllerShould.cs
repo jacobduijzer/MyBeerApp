@@ -4,11 +4,12 @@ using Xunit;
 
 namespace MyBeerApp.IntegrationTests.Api
 {
-    public class BeerControllerShould : IClassFixture<ApiTestFixture>
+    [Collection(Constants.API_DATABASE_FIXTURE)]
+    public class BeerControllerShould
     {
-        private readonly ApiTestFixture _fixture;
+        private readonly ApiTestDatabaseFixture _fixture;
 
-        public BeerControllerShould(ApiTestFixture fixture) =>
+        public BeerControllerShould(ApiTestDatabaseFixture fixture) =>
             _fixture = fixture;
 
         [Fact]

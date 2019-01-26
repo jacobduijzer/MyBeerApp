@@ -6,19 +6,19 @@ using MyBeerApp.Domain.Beers;
 using MyBeerApp.Domain.Shared;
 using MyBeerApp.Infrastructure.Shared;
 using MyBeerApp.Mocks.Beers;
-using Refit;
 using System;
+using System.Net.Http;
 
 namespace MyBeerApp.IntegrationTests
 {
-    public class ApiTestFixture : IDisposable
+    public class WebTestDatabaseFixture : IDisposable
     {
-        public readonly IApiDefinition Api;
+        public HttpClient Client;
 
-        public ApiTestFixture()
+        public WebTestDatabaseFixture()
         {
             var options = new DbContextOptionsBuilder<MyBeerAppContext>()
-                .UseInMemoryDatabase(databaseName: "test_inmem_database")
+                .UseInMemoryDatabase(databaseName: "in-mem-web-test-database")
                 .Options;
 
             var dbContext = new MyBeerAppContext(options);
@@ -33,11 +33,9 @@ namespace MyBeerApp.IntegrationTests
                     serviceCollection.AddScoped<MyBeerAppContext>(x => dbContext);
                     serviceCollection.AddScoped<IRepository<Beer>, EfRepository<Beer>>();
                 })
-                .UseStartup<MyBeerApp.Api.Startup>());
+                .UseStartup<MyBeerApp.Web.Startup>());
 
-            var client = server.CreateClient();
-
-            Api = RestService.For<IApiDefinition>(client);
+            Client = server.CreateClient();
         }
 
         public void Dispose()

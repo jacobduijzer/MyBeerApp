@@ -5,11 +5,12 @@ using Xunit;
 
 namespace MyBeerApp.IntegrationTests.Web
 {
-    public class BeersPageShould : IClassFixture<WebTestFixture>
+    [Collection(Constants.WEB_DATABASE_FIXTURE)]
+    public class BeersPageShould 
     {
-        private readonly WebTestFixture _fixture;
+        private readonly WebTestDatabaseFixture _fixture;
 
-        public BeersPageShould(WebTestFixture fixture) =>
+        public BeersPageShould(WebTestDatabaseFixture fixture) =>
             _fixture = fixture;
 
         [Fact]
