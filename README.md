@@ -1,6 +1,6 @@
 | develop | master |
 | --- | --- |
-| [![Build Status](https://dev.azure.com/JDuijzer/MyBeerApp/_apis/build/status/jacobduijzer.MyBeerApp?branchName=develop)](https://dev.azure.com/JDuijzer/MyBeerApp/_build/latest?definitionId=4?branchName=develop) | n/a |
+| [![Build Status](https://dev.azure.com/JDuijzer/MyBeerApp/_apis/build/status/jacobduijzer.MyBeerApp?branchName=develop)](https://dev.azure.com/JDuijzer/MyBeerApp/_build/latest?definitionId=4?branchName=develop) | [![Build Status](https://dev.azure.com/JDuijzer/MyBeerApp/_apis/build/status/jacobduijzer.MyBeerApp-master?branchName=master)](https://dev.azure.com/JDuijzer/MyBeerApp/_build/latest?definitionId=5?branchName=master) |
 
 # MyBeerApp
 
