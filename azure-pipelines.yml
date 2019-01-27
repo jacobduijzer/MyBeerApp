@@ -17,7 +17,7 @@ steps:
   displayName: Push image
   inputs:
     command: push
-    azureSubscriptionEndpoint: db117516-8899-4779-845e-e4946b38f855
+    azureSubscriptionEndpoint: mybeerapp-resource-group
     azureContainerRegistry: mybeerapp.azurecr.io
     imageName: mybeerappapi:dev
 
