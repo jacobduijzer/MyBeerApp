@@ -13,5 +13,13 @@ steps:
 - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t mybeerappapi:dev .
   displayName: 'docker build for MyBeerApp.Api'
 
+- task: Docker@1
+  displayName: Push image
+  inputs:
+    command: push
+    azureSubscriptionEndpoint: db117516-8899-4779-845e-e4946b38f855
+    azureContainerRegistry: mybeerapp.azurecr.io
+    imageName: mybeerappapi:dev
+
 - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t mybeerappweb:dev .
   displayName: 'docker build for MyBeerApp.Web'
