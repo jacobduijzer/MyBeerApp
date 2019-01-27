@@ -1,3 +1,7 @@
+| develop | master |
+| --- | --- |
+| [![Build Status](https://dev.azure.com/JDuijzer/MyBeerApp/_apis/build/status/jacobduijzer.MyBeerApp?branchName=develop)](https://dev.azure.com/JDuijzer/MyBeerApp/_build/latest?definitionId=4?branchName=develop) | n/a |
+
 # MyBeerApp
 
 Nothing about beer here. I am trying to create a clean project structure with "Clean Architecture". What I am trying to achieve is a clean solution
