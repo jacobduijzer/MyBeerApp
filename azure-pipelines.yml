@@ -11,8 +11,8 @@ pool:
 
 steps:
   - task: replacetokens
-      targetFiles: **/appsettings.json
-      
+      targetFiles: **\appsettings.json
+
   - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
   - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
   - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
