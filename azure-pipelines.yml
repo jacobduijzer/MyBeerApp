@@ -10,10 +10,8 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-  - script: sed -i "s/__sqluser__/$(sqluser)/g"  ./src/MyBeerApp/MyBeerApp.Api/appsettings.json
-  - script: sed -i "s/__sqlpassword__/$(sqlpassword)/g"  ./src/MyBeerApp/MyBeerApp.Api/appsettings.json
-  - script: sed -i "s/__sqluser__/$(sqluser)/g"  ./src/MyBeerApp/MyBeerApp.Web/appsettings.json
-  - script: sed -i "s/__sqlpassword__/$(sqlpassword)/g"  ./src/MyBeerApp/MyBeerApp.Web/appsettings.json
+  - task: replacetokens
+      targetFiles: **/appsettings.json
   - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
   - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
   - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
