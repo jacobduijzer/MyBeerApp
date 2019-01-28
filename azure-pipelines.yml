@@ -13,7 +13,7 @@ steps:
   - task: replacetokens@3
     displayName: 'Replace tokens in MyPath.'
     inputs:
-      - targetFiles: **/appsettings.json
+      - targetFiles: "**/*.config"
 
 
     
