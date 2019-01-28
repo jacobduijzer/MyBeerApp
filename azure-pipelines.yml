@@ -12,7 +12,7 @@ pool:
 steps:
 
   - task: replacetokens@3
-    displayName: 'Replace tokens in MyPath.'
+    displayName: 'Replace tokens'
     inputs:
       targetFiles: "**/appsettings.json"
       tokenPrefix: __
