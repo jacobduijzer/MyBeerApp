@@ -13,8 +13,9 @@ steps:
   - task: colinsalmcorner.colinsalmcorner-buildtasksbeta.replace-tokens-task.ReplaceTokens@1
     displayName: 'Replace tokens in MyPath.'
     inputs:
-      sourcePath: MyPath  # Root path to find files in.
+      sourcePath: .
       filePattern: **\*.release.config
+
   - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
   - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
   - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
