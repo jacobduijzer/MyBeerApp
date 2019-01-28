@@ -10,12 +10,12 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-  - task: colinsalmcorner.colinsalmcorner-buildtasksbeta.replace-tokens-task.ReplaceTokens
+  - task: replacetokens
     displayName: 'Replace tokens in MyPath.'
     
 
-  - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
-  - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
-  - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
-  - script: docker push $(dockerId).azurecr.io/$(apiImageName)
-  - script: docker push $(dockerId).azurecr.io/$(webImageName)
+  # - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
+  # - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
+  # - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
+  # - script: docker push $(dockerId).azurecr.io/$(apiImageName)
+  # - script: docker push $(dockerId).azurecr.io/$(webImageName)
