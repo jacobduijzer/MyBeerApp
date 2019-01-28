@@ -10,8 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-  - script: |
-    docker build -t $(dockerId).azurecr.io/$(apiImageName) .
+  - script: docker build -t $(dockerId).azurecr.io/$(apiImageName) .
     #docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
     # docker push $(dockerId).azurecr.io/$(apiImageName)
 
