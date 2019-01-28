@@ -11,8 +11,6 @@ pool:
 
 steps:
 
-  - script: cat /home/vsts/work/1/s/src/MyBeerApp/MyBeerApp.Api/appsettings.json
-
   - task: replacetokens@3
     displayName: 'Replace tokens in MyPath.'
     inputs:
@@ -20,12 +18,17 @@ steps:
       tokenPrefix: __
       tokenSuffix: __
 
-  - script: cat /home/vsts/work/1/s/src/MyBeerApp/MyBeerApp.Api/appsettings.json
+  - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
+    displayName: 'Build docker image for api'
 
-    
+  - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
+    displayName: 'Build docker image for web'
 
-  # - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
-  # - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
-  # - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
-  # - script: docker push $(dockerId).azurecr.io/$(apiImageName)
-  # - script: docker push $(dockerId).azurecr.io/$(webImageName)
+  - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
+    displayName: 'Login into azure container registry'
+
+  - script: docker push $(dockerId).azurecr.io/$(apiImageName)
+    displayName: 'Push api image to container registry'
+
+  - script: docker push $(dockerId).azurecr.io/$(webImageName)
+    displayName: 'Push web image to container registry'
