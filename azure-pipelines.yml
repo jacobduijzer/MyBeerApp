@@ -11,21 +11,7 @@ pool:
 
 steps:
   - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
+  - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t $(dockerId).azurecr.io/$(webImageName) .
   - script: docker login -u $(dockerId) -p $(password) $(dockerId).azurecr.io
   - script: docker push $(dockerId).azurecr.io/$(apiImageName)
-    # docker push $(dockerId).azurecr.io/$(apiImageName)
-
-# - script: docker build -t $(dockerId)/$(imageName)
-# - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t mybeerapp.azurecr.io/mybeerappapi .
-#   displayName: 'docker build for MyBeerApp.Api'
-
-# - task: Docker@1
-#   displayName: Push image
-#   inputs:
-#     command: push
-#     azureSubscriptionEndpoint: mybeerapp-resource-group
-#     azureContainerRegistry: mybeerapp.azurecr.io
-#     imageName: mybeerappapi:dev
-
-# - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t mybeerappweb:dev .
-#   displayName: 'docker build for MyBeerApp.Web'
+  - script: docker push $(dockerId).azurecr.io/$(webImageName)
