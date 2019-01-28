@@ -12,6 +12,10 @@ pool:
 steps:
   - task: replacetokens@3
     displayName: 'Replace tokens in MyPath.'
+    inputs:
+      - targetFiles: **/appsettings.json
+
+
     
 
   # - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t $(dockerId).azurecr.io/$(apiImageName) .
