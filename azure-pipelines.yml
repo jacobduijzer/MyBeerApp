@@ -17,6 +17,8 @@ steps:
     displayName: 'Replace tokens in MyPath.'
     inputs:
       targetFiles: "**/appsettings.json"
+      tokenPrefix: __
+      tokenSuffix: __
 
   - script: cat /home/vsts/work/1/s/src/MyBeerApp/MyBeerApp.Api/appsettings.json
 
