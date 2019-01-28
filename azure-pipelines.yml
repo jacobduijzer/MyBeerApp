@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-  - task: replacetokens
+  - task: replacetokens@1
     displayName: 'Replace tokens in MyPath.'
     
 
