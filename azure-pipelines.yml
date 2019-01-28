@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-  - task: colinsalmcorner.colinsalmcorner-buildtasksbeta.replace-tokens-task.ReplaceTokens@1
+  - task: colinsalmcorner.colinsalmcorner-buildtasksbeta.replace-tokens-task.ReplaceTokens
     displayName: 'Replace tokens in MyPath.'
     
 
