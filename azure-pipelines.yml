@@ -18,7 +18,7 @@ steps:
   inputs:
     command: push
     azureSubscriptionEndpoint: mybeerapp-resource-group
-    azureContainerRegistry: mybeerapp.azurecr.io
+    azureContainerRegistry: mybeerappapi:dev
     imageName: mybeerappapi:dev
 
 - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t mybeerappweb:dev .
