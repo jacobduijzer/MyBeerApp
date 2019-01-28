@@ -10,16 +10,22 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t mybeerapp.azurecr.io/mybeerappapi .
-  displayName: 'docker build for MyBeerApp.Api'
+  - script: |
+    docker build -t $(username).azurecr.io/$(apiImageName) .
+    docker login -u $(username) -p $(password) $(username).azurecr.io
+    docker push $(username).azurecr.io/$(apiImageName)
 
-- task: Docker@1
-  displayName: Push image
-  inputs:
-    command: push
-    azureSubscriptionEndpoint: mybeerapp-resource-group
-    azureContainerRegistry: mybeerapp.azurecr.io
-    imageName: mybeerappapi:dev
+# - script: docker build -t $(dockerId)/$(imageName)
+# - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Api/Dockerfile -t mybeerapp.azurecr.io/mybeerappapi .
+#   displayName: 'docker build for MyBeerApp.Api'
 
-- script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t mybeerappweb:dev .
-  displayName: 'docker build for MyBeerApp.Web'
+# - task: Docker@1
+#   displayName: Push image
+#   inputs:
+#     command: push
+#     azureSubscriptionEndpoint: mybeerapp-resource-group
+#     azureContainerRegistry: mybeerapp.azurecr.io
+#     imageName: mybeerappapi:dev
+
+# - script: docker build --no-cache -f ./src/MyBeerApp/MyBeerApp.Web/Dockerfile -t mybeerappweb:dev .
+#   displayName: 'docker build for MyBeerApp.Web'
